@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    animation: slideDown 0.5s ease-out;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.5s ease-out;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-header h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #38a169;
+}
+
+.btn-secondary {
+    background: #cbd5e0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #a0aec0;
+}
+
+.btn-danger {
+    background: #f56565;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85em;
+}
+
+.btn-danger:hover {
+    background: #e53e3e;
+}
+
+.btn-edit {
+    background: #4299e1;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85em;
+}
+
+.btn-edit:hover {
+    background: #3182ce;
+}
+
+/* Formularios */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    padding: 10px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.formulario-oculto {
+    display: none;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.formulario-oculto.mostrar {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Lista de items */
+.lista-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    background: #f0f4f8;
+    transform: translateX(5px);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-titulo {
+    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+}
+
+.item-descripcion {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.item-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.badge-categoria {
+    background: #bee3f8;
+    color: #2c5aa0;
+}
+
+.badge-fecha {
+    background: #fed7e2;
+    color: #97266d;
+}
+
+.badge-completada {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.item-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.checkbox-tarea {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+/* Categoría Item */
+.categoria-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #764ba2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.categoria-item:hover {
+    background: #f0f4f8;
+    transform: translateX(5px);
+}
+
+.categoria-nombre {
+    font-weight: 600;
+    color: #333;
+}
+
+.categoria-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 8px 16px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filtro-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.filtro-btn.activo {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Estados */
+.tarea-completada .item-titulo {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.tarea-completada .item-descripcion {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.item-vacio {
+    padding: 30px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filtros {
+        justify-content: center;
+    }
+}

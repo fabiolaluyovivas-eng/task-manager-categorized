@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejador de Tareas Categorizadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Manejador de Tareas</h1>
+            <p class="subtitle">Organiza tus tareas por categorías</p>
+        </header>
+
+        <main>
+            <div class="main-content">
+                <!-- SECCIÓN DE CATEGORÍAS -->
+                <section class="section categorias-section">
+                    <div class="section-header">
+                        <h2>📂 Categorías</h2>
+                        <button class="btn btn-primary" onclick="mostrarFormularioCategoria()">+ Nueva Categoría</button>
+                    </div>
+                    
+                    <div id="formulario-categoria" class="formulario-oculto">
+                        <div class="form-group">
+                            <input type="text" id="input-nombre-categoria" placeholder="Nombre de la categoría" class="form-control">
+                            <button class="btn btn-success" onclick="crearCategoria()">Crear</button>
+                            <button class="btn btn-secondary" onclick="ocultarFormularioCategoria()">Cancelar</button>
+                        </div>
+                    </div>
+                    
+                    <div id="lista-categorias" class="lista-items">
+                        <!-- Se cargará dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- SECCIÓN DE TAREAS -->
+                <section class="section tareas-section">
+                    <div class="section-header">
+                        <h2>✅ Tareas</h2>
+                        <button class="btn btn-primary" onclick="mostrarFormularioTarea()">+ Nueva Tarea</button>
+                    </div>
+                    
+                    <div id="formulario-tarea" class="formulario-oculto">
+                        <div class="form-group">
+                            <input type="text" id="input-nombre-tarea" placeholder="Nombre de la tarea" class="form-control">
+                            <textarea id="input-descripcion-tarea" placeholder="Descripción" class="form-control"></textarea>
+                            <select id="input-categoria-tarea" class="form-control">
+                                <option value="">Selecciona una categoría</option>
+                            </select>
+                            <input type="datetime-local" id="input-fecha-tarea" class="form-control">
+                            <button class="btn btn-success" onclick="crearTarea()">Crear</button>
+                            <button class="btn btn-secondary" onclick="ocultarFormularioTarea()">Cancelar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtros -->
+                    <div class="filtros">
+                        <button class="filtro-btn activo" onclick="filtrarTareas('todas')">Todas</button>
+                        <button class="filtro-btn" onclick="filtrarTareas('pendientes')">Pendientes</button>
+                        <button class="filtro-btn" onclick="filtrarTareas('completadas')">Completadas</button>
+                    </div>
+                    
+                    <div id="lista-tareas" class="lista-items">
+                        <!-- Se cargará dinámicamente -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
